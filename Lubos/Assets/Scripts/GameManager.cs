@@ -28,11 +28,11 @@ public class GameManager : MonoBehaviour {
             if (Physics.Raycast(ray, out hit))
             {
                 Debug.Log(hit.transform.name);
-                if(hit.transform.tag == "Player")
+                if(hit.transform.parent.tag == "Player")
                 {
                     //hit.transform.position = new Vector3(hit.transform.position.x + 1, hit.transform.position.y, hit.transform.position.z);
 
-                    Piece piece = hit.transform.GetComponent<Piece>();
+                    Piece piece = hit.transform.parent.GetComponent<Piece>();
 
                     if(piece.team == currentPlayer)
                     {
