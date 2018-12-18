@@ -6,10 +6,14 @@ public class Piece : MonoBehaviour {
 
     public float moveSpeed = 1f;
     public Team team;
+    public GameObject currentTile;
 
-    public void MoveToPosition(Vector3 target)
+    public bool inBase = true;
+
+    public void MoveToPosition(Vector3 target, GameObject nextTile)
     {
         StartCoroutine(LerpToPosition(target));
+        currentTile = nextTile;
     }
 
     IEnumerator LerpToPosition(Vector3 target)
