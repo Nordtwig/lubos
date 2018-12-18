@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
     public Team currentPlayer;
+    public Text currentPlayerText;
 
 	// Use this for initialization
 	void Start () {
-		
+        currentPlayerText.text = "Turn: " + currentPlayer.ToString();
 	}
 	
 	// Update is called once per frame
@@ -16,6 +18,7 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.Space))
         {
             currentPlayer = (Team)(((int)currentPlayer + 1) % 4);
+            currentPlayerText.text = "Turn: " + currentPlayer.ToString();
         }
 
         //Ray ray = new Ray(Camera.main.ScreenToWorldPoint(Input.mousePosition), Camera.main.transform.forward);
