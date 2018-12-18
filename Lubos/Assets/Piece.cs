@@ -5,6 +5,7 @@ using UnityEngine;
 public class Piece : MonoBehaviour {
 
     public float moveSpeed = 1f;
+    public Team team;
 
     public void MoveToPosition(Vector3 target)
     {
